@@ -13,9 +13,16 @@ fi
 
 # 2. Repo klonen (falls noch nicht geschehen)
 TARGET_DIR="$HOME/.dotfiles"
+REPO_URL_HTTPS="https://github.com/snwiem/dotfiles.git"
+REPO_URL_SSH="git@github.com:snwiem/dotfiles.git"
 if [ ! -d "$TARGET_DIR" ]; then
-    echo "📥 Klone Dotfiles-Repository..."
-    git clone https://github.com/snwiem/dotfiles.git "$TARGET_DIR"
+echo "📥 Klone Dotfiles-Repository via HTTPS..."
+    git clone "$REPO_URL_HTTPS" "$TARGET_DIR"
+    
+    echo "🔄 Stelle Remote-URL auf SSH um..."
+    cd "$TARGET_DIR"
+    git remote set-url origin "$REPO_URL_SSH"
+    cd - > /dev/null
 fi
 
 # 3. Mise installieren (falls nicht vorhanden)
