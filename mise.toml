@@ -1,0 +1,35 @@
+min_version = "2026.7.0"
+
+[settings]
+
+[bootstrap.hooks.pre-packages]
+run = "dnf upgrade -y"
+
+[bootstrap.hooks.post-packages]
+
+[bootstrap.hooks.post-tools]
+
+[bootstrap.hooks.post-tools]
+#run = [
+#  "mise exec -- corepack enable",
+#  "mise exec -- rustup component add rustfmt clippy",
+#]
+
+[bootstrap.hooks.final]
+#run = "gh auth status || gh auth login"
+
+[bootstrap.packages]
+
+[bootstrap.repos]
+
+[bootstrap.user]
+
+[tools]
+
+[dotfiles]
+
+[tasks.bootstrap]
+
+[tasks.bootstrap]
+
+
