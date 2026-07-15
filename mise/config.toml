@@ -1,5 +1,4 @@
 [bootstrap.packages]
-dnf = ["zsh", "git", "util-linux-user"] # util-linux-user wird für chsh benötigt
 "dnf:git" = "latest"
 "dnf:zsh" = "latest"
 "dnf:util-linux-user" = "latest"
