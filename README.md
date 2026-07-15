@@ -1,3 +1,3 @@
 ```bash
-curl -sSL https://raw.githubusercontent.com/DEIN_USERNAME/dotfiles/main/bootstrap.sh | bash
+curl -sSL https://raw.githubusercontent.com/snwiem/dotfiles/main/bootstrap.sh | bash
 ```
