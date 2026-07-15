@@ -2,6 +2,7 @@
 # bootstrap.sh
 
 set -e # Bei Fehlern sofort abbrechen
+set -x
 
 echo "🚀 Starte System-Bootstrap..."
 
@@ -39,8 +40,9 @@ fi
 
 # 5. Mise Bootstrap ausführen (installiert Zsh, Runtimes etc.)
 echo "⚙️ Starte Mise-Bootstrap..."
-~/.local/bin/mise bootstrap
+MISE_YES=true ~/.local/bin/mise bootstrap
 
+echo "************"
 # 6. Shell wechseln
 if [ "$SHELL" != "$(which zsh)" ]; then
     echo "🐚 Wechsle Standard-Shell zu Zsh..."
