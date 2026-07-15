@@ -2,7 +2,6 @@
 # bootstrap.sh
 
 set -e # Bei Fehlern sofort abbrechen
-set -x
 
 echo "🚀 Starte System-Bootstrap..."
 
@@ -42,12 +41,11 @@ fi
 echo "⚙️ Starte Mise-Bootstrap..."
 MISE_YES=true ~/.local/bin/mise bootstrap
 
-echo "************"
 # 6. Shell wechseln
-if [ "$SHELL" != "$(which zsh)" ]; then
-    echo "🐚 Wechsle Standard-Shell zu Zsh..."
-#    sudo dnf install -y util-linux-user # Für chsh benötigt
-    chsh -s "$(which zsh)"
-fi
+#if [ "$SHELL" != "$(which zsh)" ]; then
+#    echo "🐚 Wechsle Standard-Shell zu Zsh..."
+##    sudo dnf install -y util-linux-user # Für chsh benötigt
+#    chsh -s "$(which zsh)"
+#fi
 
 echo "✅ Bootstrap abgeschlossen! Bitte starte deine Shell neu."

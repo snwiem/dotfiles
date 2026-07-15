@@ -3,6 +3,9 @@
 "dnf:zsh" = "latest"
 "dnf:util-linux-user" = "latest"
 
+[bootstrap.user]
+login_shell = "/usr/bin/zsh"
+
 # 2. Deine Dotfiles automatisch an die richtige Stelle linken
 [dotfiles]
 # Verlinkt deine .zshrc aus dem Repo nach ~/.zshrc
