@@ -45,13 +45,12 @@ export MISE_YES=true
 
 LOCAL_GIT_DIR="$HOME/.config/git"
 LOCAL_GIT="$LOCAL_GIT_DIR/config.local"
-
 if [ ! -f "$LOCAL_GIT" ]; then
     echo "👤 Git-Identität einrichten..."
     mkdir -p "$LOCAL_GIT_DIR" # Sicherstellen, dass der Ordner existiert
     
-    read -p "Gib deinen vollständigen Namen für Git ein: " git_name
-    read -p "Gib deine E-Mail-Adresse für Git ein: " git_email
+    read -p "Gib deinen vollständigen Namen für Git ein: " git_name < /dev/tty
+    read -p "Gib deine E-Mail-Adresse für Git ein: " git_email < /dev/tty
     
     cat <<EOF > "$LOCAL_GIT"
 [user]
