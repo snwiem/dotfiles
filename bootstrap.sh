@@ -39,13 +39,26 @@ fi
 
 # 5. Mise Bootstrap ausführen (installiert Zsh, Runtimes etc.)
 echo "⚙️ Starte Mise-Bootstrap..."
-MISE_YES=true ~/.local/bin/mise bootstrap
+export MISE_VERBOSE=1
+export MISE_YES=true
+~/.local/bin/mise bootstrap --yes
 
-# 6. Shell wechseln
-#if [ "$SHELL" != "$(which zsh)" ]; then
-#    echo "🐚 Wechsle Standard-Shell zu Zsh..."
-##    sudo dnf install -y util-linux-user # Für chsh benötigt
-#    chsh -s "$(which zsh)"
-#fi
+LOCAL_GIT_DIR="$HOME/.config/git"
+LOCAL_GIT="$LOCAL_GIT_DIR/config.local"
+
+if [ ! -f "$LOCAL_GIT" ]; then
+    echo "👤 Git-Identität einrichten..."
+    mkdir -p "$LOCAL_GIT_DIR" # Sicherstellen, dass der Ordner existiert
+    
+    read -p "Gib deinen vollständigen Namen für Git ein: " git_name
+    read -p "Gib deine E-Mail-Adresse für Git ein: " git_email
+    
+    cat <<EOF > "$LOCAL_GIT"
+[user]
+    name = $git_name
+    email = $git_email
+EOF
+    echo "✅ $LOCAL_GIT wurde erfolgreich erstellt!"
+fi
 
 echo "✅ Bootstrap abgeschlossen! Bitte starte deine Shell neu."

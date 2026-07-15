@@ -1,0 +1,4 @@
+[user]
+
+[include]
+  path = ~/.config/git/config.local
