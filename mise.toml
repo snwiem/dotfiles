@@ -3,26 +3,65 @@ min_version = "2026.7.0"
 [settings]
 
 [bootstrap.hooks.pre-packages]
-run = "dnf upgrade -y"
+run = [
+  "echo \"boostrap.hooks.pre-packages\"",
+  "scripts/setup-repos.sh",
+  "sudo dnf upgrade -y"
+]
 
 [bootstrap.hooks.post-packages]
+run = [
+  "echo \"bootstrap.hooks.post-packages\"",
+  "mise run bootstrap"
+]
+
+[bootstrap.hooks.pre-tools]
+run = "echo \"bootstrap.hooks.pre-tools\""
 
 [bootstrap.hooks.post-tools]
-
-[bootstrap.hooks.post-tools]
+run = "echo \"bootstrap.hooks.post-tools\""
 #run = [
 #  "mise exec -- corepack enable",
 #  "mise exec -- rustup component add rustfmt clippy",
 #]
 
 [bootstrap.hooks.final]
+run = "echo \"bootstrap.hooks.final\""
 #run = "gh auth status || gh auth login"
 
 [bootstrap.packages]
+"dnf:@development-tools" = "latest"
+"dnf:curl" = "latest"
+"dnf:wget" = "latest"
+"dnf:git" = "latest"
+"dnf:vim" = "latest"
+"dnf:tmux" = "latest"
+"dnf:htop" = "latest"
+"dnf:jq" = "latest"
+"dnf:unzip" = "latest"
+"dnf:ripgrep" = "latest"
+"dnf:fd-find" = "latest"
+"dnf:bat" = "latest"
+"dnf:fzf" = "latest"
+"dnf:tree" = "latest"
+"dnf:net-tools" = "latest"
+"dnf:ca-certificates" = "latest"
+"dnf:gnupg2" = "latest"
+"dnf:util-linux-user" = "latest"
+"dnf:zoxide" = "latest"
+"dnf:fastfetch" = "latest"
+"dnf:starship" = "latest"
+"dnf:eza" = "latest"
+"dnf:neovim" = "latest"
+"dnf:podman-remote" = "latest"
+"dnf:podman-docker" = "latest"
+"dnf:podman-compose" = "latest"
+"dnf:code" = "latest"
 
 [bootstrap.repos]
 
 [bootstrap.user]
+login_shell = "/usr/bin/zsh"
 
 [tools]
 
@@ -30,6 +69,5 @@ run = "dnf upgrade -y"
 
 [tasks.bootstrap]
 
-[tasks.bootstrap]
 
 
