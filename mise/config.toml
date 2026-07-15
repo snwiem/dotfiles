@@ -10,7 +10,7 @@ login_shell = "/usr/bin/zsh"
 [dotfiles]
 # Verlinkt deine .zshrc aus dem Repo nach ~/.zshrc
 #"~/.zshrc" = "./dotfiles/.zshrc"
-"~/.config/git/config" = "{{config.root}}/../git/config"
+"~/.config/git/config" = "{{config_root}}/../git/config"
 
 # 3. Globale Entwicklungs-Tools, die mise verwalten soll
 [tools]
