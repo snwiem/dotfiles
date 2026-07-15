@@ -1,0 +1,10 @@
+[bootstrap.packages]
+dnf = ["zsh", "git", "util-linux-user"] # util-linux-user wird für chsh benötigt
+
+# 2. Deine Dotfiles automatisch an die richtige Stelle linken
+[dotfiles]
+# Verlinkt deine .zshrc aus dem Repo nach ~/.zshrc
+#"~/.zshrc" = "./dotfiles/.zshrc"
+
+# 3. Globale Entwicklungs-Tools, die mise verwalten soll
+[tools]
