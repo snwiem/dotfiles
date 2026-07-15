@@ -44,7 +44,7 @@ echo "⚙️ Starte Mise-Bootstrap..."
 # 6. Shell wechseln
 if [ "$SHELL" != "$(which zsh)" ]; then
     echo "🐚 Wechsle Standard-Shell zu Zsh..."
-    sudo dnf install -y util-linux-user # Für chsh benötigt
+#    sudo dnf install -y util-linux-user # Für chsh benötigt
     chsh -s "$(which zsh)"
 fi
 
