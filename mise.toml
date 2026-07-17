@@ -63,6 +63,7 @@ login_shell = "/usr/bin/zsh"
 "~/.zshrc" = "config/zsh/zshrc"
 "~/.zprofile" = "config/zsh/zprofile"
 "~/.config/git/config" = "config/git/config"
+"~/.config/nvim" = "config/nvim"
 
 [tasks.bootstrap]
 
