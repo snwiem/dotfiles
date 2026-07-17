@@ -60,6 +60,8 @@ login_shell = "/usr/bin/zsh"
 "~/.bashrc" = "config/bash/bashrc"
 "~/.bash_profile" = "config/bash/bash_profile"
 "~/.bash_logout" = "config/bash/bash_logout"
+"~/.zshrc" = "config/zsh/zshrc"
+"~/.zprofile" = "config/zsh/zprofile"
 "~/.config/git/config" = "config/git/config"
 
 [tasks.bootstrap]
