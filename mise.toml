@@ -54,6 +54,8 @@ login_shell = "/usr/bin/zsh"
 "zoxide" = "latest"
 "neovim" = "latest"
 "starship" = "latest"
+"herdr" = "latest"
+"pi" = "latest"
 
 [dotfiles]
 "~/.config/mise/config.toml" = "mise.toml"
