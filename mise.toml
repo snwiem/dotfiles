@@ -1,29 +1,17 @@
 min_version = "2026.7.0"
 
 [settings]
+dotfiles.root = "~/.dotfiles"
+dotfiles.default_mode = "symlink"
 
-[bootstrap.hooks.pre-packages]
-run = [
-  "echo \"boostrap.hooks.pre-packages\"",
+[bootstrap.hooks]
+pre-packages = [
   "scripts/setup-repos.sh",
   "sudo dnf upgrade -y"
 ]
-
-[bootstrap.hooks.post-packages]
-run = [
-  "echo \"bootstrap.hooks.post-packages\"",
+post-packages = [
   "mise run bootstrap"
 ]
-
-[bootstrap.hooks.pre-tools]
-run = "echo \"bootstrap.hooks.pre-tools\""
-
-[bootstrap.hooks.post-tools]
-run = "echo \"bootstrap.hooks.post-tools\""
-#run = [
-#  "mise exec -- corepack enable",
-#  "mise exec -- rustup component add rustfmt clippy",
-#]
 
 [bootstrap.hooks.final]
 run = "echo \"bootstrap.hooks.final\""
@@ -31,41 +19,44 @@ run = "echo \"bootstrap.hooks.final\""
 
 [bootstrap.packages]
 "dnf:@development-tools" = "latest"
+"dnf:@c-development" = "latest"
 "dnf:curl" = "latest"
 "dnf:wget" = "latest"
 "dnf:git" = "latest"
+"dnf:zsh" = "latest"
 "dnf:vim" = "latest"
 "dnf:tmux" = "latest"
 "dnf:htop" = "latest"
 "dnf:jq" = "latest"
 "dnf:unzip" = "latest"
+"dnf:fastfetch" = "latest"
 "dnf:ripgrep" = "latest"
 "dnf:fd-find" = "latest"
 "dnf:bat" = "latest"
 "dnf:fzf" = "latest"
 "dnf:tree" = "latest"
+"dnf:util-linux-user" = "latest"
 "dnf:net-tools" = "latest"
 "dnf:ca-certificates" = "latest"
 "dnf:gnupg2" = "latest"
-"dnf:util-linux-user" = "latest"
-"dnf:zoxide" = "latest"
-"dnf:fastfetch" = "latest"
-"dnf:starship" = "latest"
-"dnf:eza" = "latest"
-"dnf:neovim" = "latest"
-"dnf:podman-remote" = "latest"
-"dnf:podman-docker" = "latest"
-"dnf:podman-compose" = "latest"
-"dnf:code" = "latest"
+"dnf:age" = "latest"
+"dnf:pass" = "latest"
+"dnf:gopass" = "latest"
 
 [bootstrap.repos]
+"~/.dotfiles" = { url = "git@github.com:snwiem/dotfiles.git", ref = "main" }
 
 [bootstrap.user]
 login_shell = "/usr/bin/zsh"
 
 [tools]
+"eza" = "latest"
+"zoxide" = "latest"
+"neovim" = "latest"
+"starship" = "latest"
 
 [dotfiles]
+"~/.config/mise/config.toml" = "mise.toml"
 
 [tasks.bootstrap]
 

@@ -45,10 +45,10 @@ if ! dnf copr list | grep -q "atim/starship"; then
 fi
 
 # 1Password repository
-if [ ! -f /etc/yum.repos.d/1password.repo ]; then
-    echo "Adding 1Password repository..."
-    sudo rpm --import https://downloads.1password.com/linux/keys/1password.asc
-    sudo sh -c 'echo -e "[1password]\nname=1Password\nbaseurl=https://downloads.1password.com/linux/rpm/stable/\$basearch\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=\"https://downloads.1password.com/linux/keys/1password.asc\"" > /etc/yum.repos.d/1password.repo'
-fi
+#if [ ! -f /etc/yum.repos.d/1password.repo ]; then
+#    echo "Adding 1Password repository..."
+#    sudo rpm --import https://downloads.1password.com/linux/keys/1password.asc
+#    sudo sh -c 'echo -e "[1password]\nname=1Password\nbaseurl=https://downloads.1password.com/linux/rpm/stable/\$basearch\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=\"https://downloads.1password.com/linux/keys/1password.asc\"" > /etc/yum.repos.d/1password.repo'
+#fi
 
 echo "=== Repositories setup complete ==="
