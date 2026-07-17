@@ -57,6 +57,9 @@ login_shell = "/usr/bin/zsh"
 
 [dotfiles]
 "~/.config/mise/config.toml" = "mise.toml"
+"~/.bashrc" = "config/bash/bashrc"
+"~/.bash_profile" = "config/bash/bash_profile"
+"~/.bash_logout" = "config/bash/bash_logout"
 
 [tasks.bootstrap]
 
