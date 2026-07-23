@@ -68,7 +68,7 @@ gh = "latest"
 "~/.zprofile" = "config/zsh/zprofile"
 "~/.config/git/config" = "config/git/config"
 "~/.config/nvim" = "config/nvim"
-"~/.config/starship.toml" = "config/starship/hyde.toml"
+"~/.config/starship.toml" = "config/starship/lempa.toml"
 
 [tasks.bootstrap]
 
