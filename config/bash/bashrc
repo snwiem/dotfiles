@@ -24,5 +24,6 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 
+eval "$(~/.local/bin/mise activate bash)"
 eval "$(fzf --bash)"
 eval "$(starship init $0)"
